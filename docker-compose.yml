@@ -1,0 +1,12 @@
+version: "2"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: cheffon-postgres
+    volumes:
+      - .var/postgres/data:/var/lib/postgresql/data
+      - .var/postgres/conf:/etc/postgresql/postgresql.conf
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"

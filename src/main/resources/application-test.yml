@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:test
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.HSQLDialect
+  flyway:
+    init-sqls: 'SET DATABASE SQL SYNTAX PGS TRUE;'
