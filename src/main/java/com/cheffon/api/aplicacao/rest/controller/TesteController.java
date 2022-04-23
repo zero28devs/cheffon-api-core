@@ -29,7 +29,7 @@ public class TesteController {
     @PostMapping
     public ResponseEntity<TesteData> inserir() {
         var testeData = new TesteData();
-        testeData.setNome("Teste2");
+        testeData.setNome("Teste");
 
         testeDataRepositorio.save(testeData);
 
