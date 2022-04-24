@@ -1,4 +1,4 @@
-package com.cheffon.api.aplicacao.rest.controller;
+package com.cheffon.api.application.rest.controller;
 
 import com.cheffon.api.infra.db.jpa.TesteDataRepositorio;
 import com.cheffon.api.infra.db.orm.TesteData;
