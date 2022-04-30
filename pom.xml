@@ -113,6 +113,7 @@
                         <exclude>**/*br/com/cheffon/api/Application.class</exclude>
                         <exclude>**/*br/com/cheffon/api/application/**/*</exclude>
                         <exclude>**/*br/com/cheffon/api/infra/**/*</exclude>
+                        <exclude>**/*br/com/cheffon/api/shared/**/*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
