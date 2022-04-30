@@ -39,7 +39,7 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=${{secrets.SONAR_PROJECT_KEY}} -Dspring.profiles.active=test
   discord-notification:
     runs-on: ubuntu-latest
-    needs: deploy-hml
+    needs: sonarqube
     steps:
       - name: Discord notification
         env:
