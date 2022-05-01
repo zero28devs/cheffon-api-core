@@ -1,13 +1,11 @@
 package com.cheffon.api.domain.tags.entities;
 
-import com.cheffon.api.shared.exceptions.domain.AtributoInvalidoException;
-
 public class Tag {
 
 	private Long id;
 	private String nome;
 
-	public Tag( String nome ) throws AtributoInvalidoException {
+	public Tag( String nome ) {
 		this.setNome( nome );
 	}
 
@@ -23,9 +21,7 @@ public class Tag {
 		this.id = id;
 	}
 
-	private void setNome( String nome ) throws AtributoInvalidoException {
-		if( nome.isBlank() || nome.length() > 50 )
-			throw new AtributoInvalidoException( "nome" );
+	private void setNome( String nome ) {
 		this.nome = nome;
 	}
 

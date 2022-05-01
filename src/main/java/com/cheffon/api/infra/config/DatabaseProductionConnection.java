@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 
 @Configuration
 @Profile("prod")
-public class DatabaseConnection {
+public class DatabaseProductionConnection {
 
 	@Bean
 	public DataSource dataSource() throws URISyntaxException {

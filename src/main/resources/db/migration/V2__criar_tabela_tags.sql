@@ -1,4 +1,4 @@
-DROP TABLE teste;
+DROP TABLE test;
 
 CREATE TABLE tags (
     id SERIAL NOT NULL,

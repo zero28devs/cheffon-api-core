@@ -1,27 +1,27 @@
 package com.cheffon.api.domain.tags.services;
 
-import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
-import com.cheffon.api.domain.tags.services.interfaces.TagUseCase;
-import com.cheffon.api.shared.exceptions.domain.AtributoInvalidoException;
+import com.cheffon.api.domain.tags.services.interfaces.TagDomainService;
+import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.shared.exceptions.domain.EntidadeNaoEncontradaException;
 
-public class TagService implements TagUseCase {
-	private final TagRepository tagRepository;
+public class TagService<V, T> implements TagDomainService {
 
-	public TagService( TagRepository tagRepository ) {
+	private final TagRepository<V, T> tagRepository;
+
+	public TagService( TagRepository<V, T> tagRepository ) {
 		this.tagRepository = tagRepository;
 	}
 
 	@Override
-	public Tag Instanciar( String nome ) throws AtributoInvalidoException {
+	public Tag Instanciar( String nome ) {
 		return new Tag( nome );
 	}
 
 	@Override
-	public Tag Validar( Long codigo ) throws EntidadeNaoEncontradaException {
-		Tag tag = tagRepository.buscarPorCodigo( codigo );
-		if (tag == null)
+	public Tag Validar( Long id ) throws EntidadeNaoEncontradaException {
+		Tag tag = tagRepository.buscar( id );
+		if( tag == null )
 			throw new EntidadeNaoEncontradaException( Tag.class );
 		return tag;
 	}
