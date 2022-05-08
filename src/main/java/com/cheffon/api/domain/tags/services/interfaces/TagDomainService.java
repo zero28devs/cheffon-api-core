@@ -5,5 +5,5 @@ import com.cheffon.api.shared.exceptions.domain.EntidadeNaoEncontradaException;
 
 public interface TagDomainService {
 
-	Tag Validar( Long id ) throws EntidadeNaoEncontradaException;
+	Tag validar( Long id ) throws EntidadeNaoEncontradaException;
 }

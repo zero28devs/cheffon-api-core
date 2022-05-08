@@ -34,7 +34,7 @@ class TagServiceTest {
 	void quandoValidarComCodigoValidoEsperoTagValida() throws EntidadeNaoEncontradaException {
 		Tag tag = tagFactory.gerarPadrao();
 		when( tagRepository.buscar( 1L ) ).thenReturn( tag );
-		Tag tagRetornada = tagService.Validar( 1L );
+		Tag tagRetornada = tagService.validar( 1L );
 		assertEquals( tag, tagRetornada );
 	}
 
@@ -43,6 +43,6 @@ class TagServiceTest {
 	void quandoValidarComCodigoInvalidoEsperoEntidadeNaoEncontrada() {
 		Tag tag = tagFactory.gerarPadrao();
 		when( tagRepository.buscar( 999L ) ).thenReturn( null );
-		assertThrowsExactly( EntidadeNaoEncontradaException.class, () -> tagService.Validar( 999L ) );
+		assertThrowsExactly( EntidadeNaoEncontradaException.class, () -> tagService.validar( 999L ) );
 	}
 }

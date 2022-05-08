@@ -14,7 +14,7 @@ public final class TagService<V, T> implements TagDomainService {
 	}
 
 	@Override
-	public Tag Validar( Long id ) throws EntidadeNaoEncontradaException {
+	public Tag validar( Long id ) throws EntidadeNaoEncontradaException {
 		Tag tag = tagRepository.buscar( id );
 		if( tag == null )
 			throw new EntidadeNaoEncontradaException( Tag.class );
