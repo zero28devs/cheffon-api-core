@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public final class TagDatabaseRepository implements TagRepository<Page<Tag>, Pageable> {
+public class TagDatabaseRepository implements TagRepository<Page<Tag>, Pageable> {
 
 	private final TagDataRepository tagDataRepository;
 
