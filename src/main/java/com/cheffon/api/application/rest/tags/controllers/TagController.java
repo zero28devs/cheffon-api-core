@@ -51,7 +51,7 @@ public final class TagController {
 
 	@GetMapping
 	@Operation( summary = "Lista as tags", description = "", tags = { "tags" } )
-	public Page<TagResponse> listar( @PageableDefault Pageable dadosPaginacao, TagListarRequest request ) throws Exception {
+	public Page<TagResponse> listar( @PageableDefault Pageable dadosPaginacao, TagListarRequest request ) {
 		ListarTagFiltro listarTagFiltro = request != null ? ListarTagFiltroMapper.INSTANCE.tagListarRequestToListarTagFiltro( request ) : new ListarTagFiltro();
 		Page<Tag> paginaTags = tagApplicationService.listar( dadosPaginacao, listarTagFiltro );
 		List<TagResponse> tagsResponses = paginaTags.getContent().stream().map( TagMapper.INSTANCE::tagToTagResponse ).toList();

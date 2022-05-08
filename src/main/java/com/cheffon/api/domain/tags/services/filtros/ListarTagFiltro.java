@@ -4,9 +4,6 @@ public final class ListarTagFiltro {
 
 	private String nome;
 
-	public ListarTagFiltro() {
-	}
-
 	public String getNome() {
 		return nome;
 	}
