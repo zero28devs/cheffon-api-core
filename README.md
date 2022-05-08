@@ -70,6 +70,16 @@ Para acessar documentação da API do projeto, basta acessar a URL abaixo:
 http://localhost:8080/swagger-ui/index.html
 ```
 
+### Verificar cobertura dos testes
+
+Para verificar a cobertura de testes, basta executar o seguinte comando (ou rodar pela aba Maven no IntelliJ):
+
+```bash
+./mvnw verify
+```
+
+Os relatórios de cobertura de testes estão disponíveis no diretório **target/site/jacoco/index.html**
+
 ### OBS (TIRAR ASSIM QUE GERAR DOC)
 
 Criar no dokku uma variavel de ambiente com o seguinte comando:

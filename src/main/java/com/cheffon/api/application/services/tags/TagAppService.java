@@ -11,7 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TagAppService implements TagApplicationService {
+public final class TagAppService implements TagApplicationService {
 
 	private final TagRepository<Page<Tag>, Pageable> tagRepository;
 

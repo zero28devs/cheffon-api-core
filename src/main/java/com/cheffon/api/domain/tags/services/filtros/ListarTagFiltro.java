@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.tags.services.filtros;
 
-public class ListarTagFiltro {
+public final class ListarTagFiltro {
 
 	private String nome;
 

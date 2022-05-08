@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.tags.entities;
 
-public class Tag {
+public final class Tag {
 
 	private Long id;
 	private String nome;

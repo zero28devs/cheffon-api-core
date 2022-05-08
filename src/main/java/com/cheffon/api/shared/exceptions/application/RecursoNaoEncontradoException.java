@@ -1,8 +1,8 @@
 package com.cheffon.api.shared.exceptions.application;
 
-public class RecursoNaoEncontradoException extends Exception {
+public final class RecursoNaoEncontradoException extends Exception {
 
-	public RecursoNaoEncontradoException(Class<?> recurso) {
-		super("Recurso " + recurso.getSimpleName() + " não encontrado");
+	public RecursoNaoEncontradoException( Class<?> recurso ) {
+		super( "Recurso " + recurso.getSimpleName() + " não encontrado" );
 	}
 }

@@ -7,7 +7,6 @@ import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
 import com.cheffon.api.infra.db.jpa.tags.TagDataRepository;
 import com.cheffon.api.infra.db.orm.tags.TagData;
 import com.cheffon.api.infra.db.orm.tags.TagDataSpecification;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class TagDatabaseRepository implements TagRepository<Page<Tag>, Pageable> {
+public final class TagDatabaseRepository implements TagRepository<Page<Tag>, Pageable> {
 
 	private final TagDataRepository tagDataRepository;
 

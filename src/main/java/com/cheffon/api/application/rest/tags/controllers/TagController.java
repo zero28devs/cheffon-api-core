@@ -33,7 +33,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping( "tags" )
-public class TagController {
+public final class TagController {
 
 	private final TagApplicationService tagApplicationService;
 

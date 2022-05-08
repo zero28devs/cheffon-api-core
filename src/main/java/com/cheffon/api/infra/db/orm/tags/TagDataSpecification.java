@@ -9,7 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-public class TagDataSpecification implements Specification<TagData> {
+public final class TagDataSpecification implements Specification<TagData> {
 
 	private ListarTagFiltro listarTagFiltro;
 
