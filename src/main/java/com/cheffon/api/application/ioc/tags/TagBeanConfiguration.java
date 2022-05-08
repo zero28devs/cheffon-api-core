@@ -6,7 +6,7 @@ import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.domain.tags.services.TagService;
 import com.cheffon.api.domain.tags.services.interfaces.TagDomainService;
-import com.cheffon.api.infra.db.jpa.TagDataRepository;
+import com.cheffon.api.infra.db.jpa.tags.TagDataRepository;
 import com.cheffon.api.infra.repositories.tags.TagDatabaseRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class TagBeanConfiguration {
 
 	@Bean
 	public TagDomainService tagDomainService( TagRepository<Page<Tag>, Pageable> tagRepository ) {
-		return new TagService<Page<Tag>, Pageable>( tagRepository );
+		return new TagService<>( tagRepository );
 	}
 
 	@Bean

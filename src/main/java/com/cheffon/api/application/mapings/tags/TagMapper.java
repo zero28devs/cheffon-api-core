@@ -4,7 +4,7 @@ import com.cheffon.api.application.rest.tags.requests.TagCadastrarRequest;
 import com.cheffon.api.application.rest.tags.requests.TagEditarRequest;
 import com.cheffon.api.application.rest.tags.responses.TagResponse;
 import com.cheffon.api.domain.tags.entities.Tag;
-import com.cheffon.api.infra.db.orm.TagData;
+import com.cheffon.api.infra.db.orm.tags.TagData;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

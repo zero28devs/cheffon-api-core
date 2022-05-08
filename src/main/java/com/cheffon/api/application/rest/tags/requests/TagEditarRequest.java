@@ -1,6 +1,12 @@
 package com.cheffon.api.application.rest.tags.requests;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class TagEditarRequest {
+
+	@NotNull
+	@NotEmpty
 	private String nome;
 
 	public String getNome() {

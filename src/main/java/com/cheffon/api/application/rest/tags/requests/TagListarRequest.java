@@ -1,6 +1,7 @@
 package com.cheffon.api.application.rest.tags.requests;
 
 public class TagListarRequest {
+
 	private String nome;
 
 	public String getNome() {

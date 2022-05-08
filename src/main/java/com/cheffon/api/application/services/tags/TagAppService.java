@@ -30,7 +30,7 @@ public class TagAppService implements TagApplicationService {
 
 	@Override
 	public Page<Tag> listar( Pageable dadosPaginacao, ListarTagFiltro filtro ) {
-		return tagRepository.listar( dadosPaginacao );
+		return tagRepository.listar( dadosPaginacao, filtro );
 	}
 
 	@Override

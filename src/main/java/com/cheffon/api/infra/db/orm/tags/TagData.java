@@ -1,4 +1,4 @@
-package com.cheffon.api.infra.db.orm;
+package com.cheffon.api.infra.db.orm.tags;
 
 import org.hibernate.validator.constraints.Length;
 

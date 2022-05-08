@@ -14,11 +14,6 @@ public class TagService<V, T> implements TagDomainService {
 	}
 
 	@Override
-	public Tag Instanciar( String nome ) {
-		return new Tag( nome );
-	}
-
-	@Override
 	public Tag Validar( Long id ) throws EntidadeNaoEncontradaException {
 		Tag tag = tagRepository.buscar( id );
 		if( tag == null )

@@ -1,6 +1,6 @@
 package com.cheffon.api.application.rest.tags.controllers;
 
-import com.cheffon.api.application.mapings.tags.FiltroTagMapper;
+import com.cheffon.api.application.mapings.tags.ListarTagFiltroMapper;
 import com.cheffon.api.application.mapings.tags.TagMapper;
 import com.cheffon.api.application.rest.tags.requests.TagCadastrarRequest;
 import com.cheffon.api.application.rest.tags.requests.TagEditarRequest;
@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -43,41 +42,41 @@ public class TagController {
 		this.tagApplicationService = tagApplicationService;
 	}
 
-	@GetMapping( "/{id}" )
-	@Operation(summary = "Recupera uma tag", description = "", tags = { "tags" })
+	@GetMapping( "{id}" )
+	@Operation( summary = "Recupera uma tag", description = "", tags = { "tags" } )
 	public ResponseEntity<TagResponse> buscar( @PathVariable Long id ) throws RecursoNaoEncontradoException {
 		Tag tag = tagApplicationService.buscar( id );
 		return ResponseEntity.ok( TagMapper.INSTANCE.tagToTagResponse( tag ) );
 	}
 
 	@GetMapping
-	@Operation(summary = "Lista as tags", description = "", tags = { "tags" })
-	public Page<TagResponse> listar( @PageableDefault Pageable dadosPaginacao, @RequestParam TagListarRequest request ) {
-		ListarTagFiltro listarTagFiltro = FiltroTagMapper.INSTANCE.TagListarRequestToListarTagFiltro( request );
+	@Operation( summary = "Lista as tags", description = "", tags = { "tags" } )
+	public Page<TagResponse> listar( @PageableDefault Pageable dadosPaginacao, TagListarRequest request ) throws Exception {
+		ListarTagFiltro listarTagFiltro = request != null ? ListarTagFiltroMapper.INSTANCE.tagListarRequestToListarTagFiltro( request ) : new ListarTagFiltro();
 		Page<Tag> paginaTags = tagApplicationService.listar( dadosPaginacao, listarTagFiltro );
-		List<TagResponse> tagsResponses = paginaTags.getContent().stream().map( tag -> TagMapper.INSTANCE.tagToTagResponse( tag ) ).toList();
+		List<TagResponse> tagsResponses = paginaTags.getContent().stream().map( TagMapper.INSTANCE::tagToTagResponse ).toList();
 		return new PageImpl<>( tagsResponses, dadosPaginacao, paginaTags.getTotalElements() );
 	}
 
 	@PostMapping
-	@Operation(summary = "Cadastra uma tag", description = "", tags = { "tags" })
+	@Operation( summary = "Cadastra uma tag", description = "", tags = { "tags" } )
 	public ResponseEntity<TagResponse> cadastrar( @RequestBody @Valid TagCadastrarRequest request, UriComponentsBuilder uriBuilder ) {
 		Tag tag = TagMapper.INSTANCE.tagCadastrarRequestToTag( request );
 		Tag tagCadastrada = tagApplicationService.cadastrar( tag );
-		URI uri = uriBuilder.path( "/tags/{id}" ).buildAndExpand( tag.getId() ).toUri();
+		URI uri = uriBuilder.path( "/tags/{id}" ).buildAndExpand( tagCadastrada.getId() ).toUri();
 		return ResponseEntity.created( uri ).body( TagMapper.INSTANCE.tagToTagResponse( tagCadastrada ) );
 	}
 
-	@PutMapping( "/{id}" )
-	@Operation(summary = "Edita uma tag", description = "", tags = { "tags" })
+	@PutMapping( "{id}" )
+	@Operation( summary = "Edita uma tag", description = "", tags = { "tags" } )
 	public ResponseEntity<TagResponse> editar( @PathVariable Long id, @RequestBody @Valid TagEditarRequest request ) {
 		Tag tag = TagMapper.INSTANCE.tagEditarRequestToTag( request );
 		Tag tagEditada = tagApplicationService.editar( id, tag );
 		return ResponseEntity.ok( TagMapper.INSTANCE.tagToTagResponse( tagEditada ) );
 	}
 
-	@DeleteMapping( "/{id}" )
-	@Operation(summary = "Exclui uma tag", description = "", tags = { "tags" })
+	@DeleteMapping( "{id}" )
+	@Operation( summary = "Exclui uma tag", description = "", tags = { "tags" } )
 	public ResponseEntity<Void> excluir( @PathVariable Long id ) {
 		tagApplicationService.excluir( id );
 		return ResponseEntity.noContent().build();

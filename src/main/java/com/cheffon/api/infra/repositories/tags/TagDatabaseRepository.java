@@ -4,8 +4,9 @@ import com.cheffon.api.application.mapings.tags.TagMapper;
 import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
-import com.cheffon.api.infra.db.jpa.TagDataRepository;
-import com.cheffon.api.infra.db.orm.TagData;
+import com.cheffon.api.infra.db.jpa.tags.TagDataRepository;
+import com.cheffon.api.infra.db.orm.tags.TagData;
+import com.cheffon.api.infra.db.orm.tags.TagDataSpecification;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,19 +28,14 @@ public class TagDatabaseRepository implements TagRepository<Page<Tag>, Pageable>
 
 	@Override
 	public Tag buscar( Long id ) {
-		TagData tagData = tagDataRepository.findById( id ).orElseThrow( () -> new ObjectNotFoundException( id, Tag.class.getSimpleName() ) );
+		TagData tagData = tagDataRepository.findById( id ).orElse( null );
 		return TagMapper.INSTANCE.tagDataToTag( tagData );
 	}
 
 	@Override
 	public Page<Tag> listar( Pageable dadosPaginacao, ListarTagFiltro filtro ) {
-		Page<TagData> tagsDatasPagina = null;
-
-		if (filtro.getNome() != null)
-			tagsDatasPagina = tagDataRepository.f;
-
-		tagsDatasPagina = tagDataRepository.findAll( dadosPaginacao );
-
+		TagDataSpecification tagDataSpecification = new TagDataSpecification( filtro );
+		Page<TagData> tagsDatasPagina = tagDataRepository.findAll( tagDataSpecification, dadosPaginacao );
 		List<Tag> tags = tagsDatasPagina.getContent().stream().map( TagMapper.INSTANCE::tagDataToTag ).toList();
 		return new PageImpl<>( tags, dadosPaginacao, tagsDatasPagina.getTotalElements() );
 	}

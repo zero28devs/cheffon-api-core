@@ -6,9 +6,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface FiltroTagMapper {
+public interface ListarTagFiltroMapper {
 
-	FiltroTagMapper INSTANCE = Mappers.getMapper( FiltroTagMapper.class );
+	ListarTagFiltroMapper INSTANCE = Mappers.getMapper( ListarTagFiltroMapper.class );
 
-	ListarTagFiltro TagListarRequestToListarTagFiltro( TagListarRequest request );
+	ListarTagFiltro tagListarRequestToListarTagFiltro( TagListarRequest request );
 }
