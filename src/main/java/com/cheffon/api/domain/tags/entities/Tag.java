@@ -1,4 +1,4 @@
-package com.cheffon.api.domain.rating.entities;
+package com.cheffon.api.domain.tags.entities;
 
 public final class Tag {
 

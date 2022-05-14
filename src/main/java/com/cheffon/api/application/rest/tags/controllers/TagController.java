@@ -7,7 +7,7 @@ import com.cheffon.api.application.rest.tags.requests.TagEditarRequest;
 import com.cheffon.api.application.rest.tags.requests.TagListarRequest;
 import com.cheffon.api.application.rest.tags.responses.TagResponse;
 import com.cheffon.api.application.services.tags.interfaces.TagApplicationService;
-import com.cheffon.api.domain.rating.entities.Tag;
+import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
 import com.cheffon.api.shared.exceptions.application.RecursoNaoEncontradoException;
 import io.swagger.v3.oas.annotations.Operation;

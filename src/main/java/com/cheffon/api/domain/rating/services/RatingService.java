@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.rating.services;
 
-import com.cheffon.api.domain.tags.entities.Rating;
+import com.cheffon.api.domain.rating.entities.Rating;
 import com.cheffon.api.domain.rating.repositories.RatingRepository;
 import com.cheffon.api.domain.rating.services.interfaces.RatingDomainService;
 import com.cheffon.api.shared.exceptions.domain.EntidadeNaoEncontradaException;

@@ -2,7 +2,7 @@ package com.cheffon.api.application.ioc.tags;
 
 import com.cheffon.api.application.services.tags.TagAppService;
 import com.cheffon.api.application.services.tags.interfaces.TagApplicationService;
-import com.cheffon.api.domain.rating.entities.Tag;
+import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.domain.tags.services.TagService;
 import com.cheffon.api.domain.tags.services.interfaces.TagDomainService;

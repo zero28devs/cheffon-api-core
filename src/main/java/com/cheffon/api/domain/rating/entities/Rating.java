@@ -1,4 +1,4 @@
-package com.cheffon.api.domain.tags.entities;
+package com.cheffon.api.domain.rating.entities;
 
 public class Rating {
     private Long id;

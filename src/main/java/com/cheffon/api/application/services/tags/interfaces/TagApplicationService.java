@@ -1,6 +1,6 @@
 package com.cheffon.api.application.services.tags.interfaces;
 
-import com.cheffon.api.domain.rating.entities.Tag;
+import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
 import com.cheffon.api.shared.exceptions.application.RecursoNaoEncontradoException;
 import org.springframework.data.domain.Page;

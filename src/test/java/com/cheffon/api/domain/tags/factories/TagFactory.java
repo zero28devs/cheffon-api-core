@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.tags.factories;
 
-import com.cheffon.api.domain.rating.entities.Tag;
+import com.cheffon.api.domain.tags.entities.Tag;
 
 public final class TagFactory {
 

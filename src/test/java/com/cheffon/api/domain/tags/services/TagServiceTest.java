@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.tags.services;
 
-import com.cheffon.api.domain.rating.entities.Tag;
+import com.cheffon.api.domain.tags.entities.Tag;
 import com.cheffon.api.domain.tags.factories.TagFactory;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.infra.repositories.tags.TagDatabaseRepository;
