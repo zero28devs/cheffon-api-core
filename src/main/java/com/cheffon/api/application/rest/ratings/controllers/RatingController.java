@@ -66,7 +66,7 @@ public class RatingController {
         return  ResponseEntity.created(uri).body(RatingMappper.INSTANCE.ratingToRatingResponse(ratingCadastrada));
     }
 
-    @PostMapping
+    @PutMapping
     @Operation( summary = "Edita uma rating", description = "", tags = { "ratings" } )
     public ResponseEntity<RatingResponse> editar(@PathVariable Long id, @RequestBody @Valid RatingEditarRequest request){
         Rating rating = RatingMappper.INSTANCE.ratingEditarResquestToRating(request);

@@ -28,16 +28,17 @@ public class Rating {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Rating)) return false;
+
         Rating rating = (Rating) o;
-        if( getId() != null ? !getId().equals( rating.getId() ) : rating.getId() != null )
-            return false;
-        return getScore() != null ? getScore().equals( rating.getScore() ) : rating.getScore() == null;
+
+        if (getId() != null ? !getId().equals(rating.getId()) : rating.getId() != null) return false;
+        return getScore() != null ? getScore().equals(rating.getScore()) : rating.getScore() == null;
     }
 
     @Override
     public int hashCode() {
         int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + ( getScore() != null ? getScore().hashCode() : 0 );
+        result = 31 * result + (getScore() != null ? getScore().hashCode() : 0);
         return result;
     }
 
