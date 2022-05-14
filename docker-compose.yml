@@ -1,12 +1,31 @@
 version: "2"
-services:
-  postgres:
-    image: postgres:latest
-    container_name: cheffon-postgres
-    volumes:
-      - .var/postgres/data:/var/lib/postgresql/data
-      - .var/postgres/conf:/etc/postgresql/postgresql.conf
-    environment:
-      POSTGRES_PASSWORD: postgres
-    ports:
-      - "5433:5432"
+services: 
+    postgres:
+        image: postgres:latest
+        container_name: cheffon-postgres
+        volumes:
+            - .var/postgres/data:/var/lib/postgresql/data
+            - .var/postgres/conf:/etc/postgresql/postgresql.conf
+        environment: 
+            POSTGRES_PASSWORD: postgres
+        ports:
+            - "5433:5432"
+        networks: 
+            - postgres_network
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        container_name: pgadmin4
+        volumes: 
+            - pgadmin4:/var/lib/pgadmin
+        environment: 
+            PGADMIN_DEFAULT_EMAIL: wesley.leoncio.izi@gmail.com
+            PGADMIN_DEFAULT_PASSWORD: 99164750
+        networks: 
+            - postgres_network
+        ports: 
+            - 200:80
+networks: 
+    postgres_network:
+volumes: 
+    pgadmin4:
+ 

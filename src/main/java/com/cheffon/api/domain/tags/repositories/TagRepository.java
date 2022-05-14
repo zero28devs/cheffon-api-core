@@ -1,6 +1,6 @@
 package com.cheffon.api.domain.tags.repositories;
 
-import com.cheffon.api.domain.tags.entities.Tag;
+import com.cheffon.api.domain.rating.entities.Tag;
 import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
 
 public interface TagRepository<T, V> {

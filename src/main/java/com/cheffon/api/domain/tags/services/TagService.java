@@ -2,7 +2,7 @@ package com.cheffon.api.domain.tags.services;
 
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.domain.tags.services.interfaces.TagDomainService;
-import com.cheffon.api.domain.tags.entities.Tag;
+import com.cheffon.api.domain.rating.entities.Tag;
 import com.cheffon.api.shared.exceptions.domain.EntidadeNaoEncontradaException;
 
 public final class TagService<V, T> implements TagDomainService {

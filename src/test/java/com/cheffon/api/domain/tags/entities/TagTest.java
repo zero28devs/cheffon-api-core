@@ -1,5 +1,6 @@
 package com.cheffon.api.domain.tags.entities;
 
+import com.cheffon.api.domain.rating.entities.Tag;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

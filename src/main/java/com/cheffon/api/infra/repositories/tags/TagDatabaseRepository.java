@@ -1,7 +1,7 @@
 package com.cheffon.api.infra.repositories.tags;
 
 import com.cheffon.api.application.mapings.tags.TagMapper;
-import com.cheffon.api.domain.tags.entities.Tag;
+import com.cheffon.api.domain.rating.entities.Tag;
 import com.cheffon.api.domain.tags.repositories.TagRepository;
 import com.cheffon.api.domain.tags.services.filtros.ListarTagFiltro;
 import com.cheffon.api.infra.db.jpa.tags.TagDataRepository;
