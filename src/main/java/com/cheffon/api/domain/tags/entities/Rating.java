@@ -44,5 +44,4 @@ public class Rating {
     @Override
     public String toString() {return "Rating{" + "id=" + id + ", score=" + score + '}';
     }
-
 }
