@@ -11,7 +11,7 @@ import javax.persistence.criteria.Root;
 
 public final class RatingDataSpecification implements Specification<RatingData> {
 
-    private ListarRatingFiltro listarRatingFiltro;
+    private final ListarRatingFiltro listarRatingFiltro;
 
     public RatingDataSpecification(ListarRatingFiltro listarRatingFiltro){
         this.listarRatingFiltro = listarRatingFiltro;
