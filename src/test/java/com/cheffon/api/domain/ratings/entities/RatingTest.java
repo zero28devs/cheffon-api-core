@@ -24,6 +24,15 @@ class RatingTest {
     }
 
     @Test
+    @DisplayName("Quando setScore espero atribuição")
+    void quandoSetScoreEsperoAtribuicao(){
+        Rating rating = new Rating(1.0);
+        rating.setId(1L);
+        rating.setScore(2.0);
+        assertEquals(2.0, rating.getScore());
+    }
+
+    @Test
     @DisplayName("Quando equals valido espero sucesso")
     void quandoEqualsValidoEsperoSucesso(){
         EqualsVerifier.simple().forClass(Rating.class).verify();
