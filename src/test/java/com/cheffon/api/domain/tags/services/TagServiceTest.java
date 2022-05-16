@@ -41,7 +41,6 @@ class TagServiceTest {
 	@Test
 	@DisplayName( "Quando validar com código não existente espero EntidadeNaoEncontradaException" )
 	void quandoValidarComCodigoInvalidoEsperoEntidadeNaoEncontrada() {
-		Tag tag = tagFactory.gerarPadrao();
 		when( tagRepository.buscar( 999L ) ).thenReturn( null );
 		assertThrowsExactly( EntidadeNaoEncontradaException.class, () -> tagService.validar( 999L ) );
 	}
