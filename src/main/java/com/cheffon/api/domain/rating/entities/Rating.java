@@ -5,7 +5,7 @@ public class Rating {
     private Double score;
 
     public Rating(Double score) {
-        this.score = score;
+        setScore(score);
     }
 
     public Long getId() {

@@ -15,9 +15,9 @@ public interface RatingMappper {
 
     RatingResponse ratingToRatingResponse(Rating rating);
 
-    Rating ratingCadastrarRequestToRating(RatingCadastrarRequest request);
+    Rating ratingCadastrarRequestToRating(RatingCadastrarRequest requests);
 
-    Rating ratingEditarResquestToRating(RatingEditarRequest request);
+    Rating ratingEditarRequestToRating(RatingEditarRequest requests);
 
     Rating ratingDataToRating(RatingData ratingData);
 

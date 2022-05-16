@@ -69,7 +69,7 @@ public class RatingController {
     @PutMapping
     @Operation( summary = "Edita uma rating", description = "", tags = { "ratings" } )
     public ResponseEntity<RatingResponse> editar(@PathVariable Long id, @RequestBody @Valid RatingEditarRequest request){
-        Rating rating = RatingMappper.INSTANCE.ratingEditarResquestToRating(request);
+        Rating rating = RatingMappper.INSTANCE.ratingEditarRequestToRating(request);
         Rating ratingEditada = ratingApplicationService.editar(id,rating);
         return  ResponseEntity.ok(RatingMappper.INSTANCE.ratingToRatingResponse(ratingEditada));
     }
