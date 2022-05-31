@@ -1,8 +1,11 @@
 package com.cheffon.api.infra.db.orm.action;
 
 import org.hibernate.validator.constraints.Length;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table( name = "actions" )

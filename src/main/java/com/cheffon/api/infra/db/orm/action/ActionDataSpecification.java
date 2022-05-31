@@ -3,7 +3,6 @@ package com.cheffon.api.infra.db.orm.action;
 import com.cheffon.api.domain.action.services.filtros.ListarActionFiltro;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.lang.Nullable;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
