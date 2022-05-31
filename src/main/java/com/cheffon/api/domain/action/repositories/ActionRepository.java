@@ -7,5 +7,6 @@ public interface ActionRepository<T,V>{
     Action buscar(Long id);
     T listar(V dadosPaginacao, ListarActionFiltro filtro);
     Action cadastrar(Action action);
+    Action editar(Action action);
     void excluir(Long id);
 }

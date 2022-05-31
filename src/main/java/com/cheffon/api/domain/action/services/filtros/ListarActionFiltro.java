@@ -1,13 +1,14 @@
 package com.cheffon.api.domain.action.services.filtros;
 
 public final class ListarActionFiltro {
-    private String name;
 
-    public String getName() {
-        return name;
+    private String nome;
+
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

@@ -1,11 +1,12 @@
 package com.cheffon.api.domain.action.entities;
 
+
 public class Action {
     private Long id;
-    private String name;
+    private String nome;
 
-    public Action(String name) {
-        setName(name);
+    public Action(String nome) {
+        this.setNome(nome);
     }
 
     public Long getId() {
@@ -16,12 +17,12 @@ public class Action {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
@@ -32,18 +33,18 @@ public class Action {
         Action action = (Action) o;
 
         if (getId() != null ? !getId().equals(action.getId()) : action.getId() != null) return false;
-        return getName() != null ? getName().equals(action.getName()) : action.getName() == null;
+        return getNome() != null ? getNome().equals(action.getNome()) : action.getNome() == null;
     }
 
     @Override
     public int hashCode() {
         int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getNome() != null ? getNome().hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        return "Action{" + "id=" + id + ", name='" + name + '\'' + '}';
+        return "Action{" + "id=" + id + ", nome='" + nome + '\'' + '}';
     }
 }
