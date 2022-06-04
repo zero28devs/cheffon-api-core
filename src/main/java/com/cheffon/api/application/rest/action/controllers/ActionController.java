@@ -45,18 +45,22 @@ public final class ActionController {
     @GetMapping
     @Operation( summary = "Lista as actions", description = "", tags = { "actions" } )
     public Page<ActionResponse> listar( @PageableDefault Pageable dadosPaginacao, ActionListarRequest request ) {
-        ListarActionFiltro listarActionFiltro = request != null ? ListarActionFiltroMapper.INSTANCE.actionListarRequestToListarActionFiltro( request ) : new ListarActionFiltro();
+        ListarActionFiltro listarActionFiltro = request != null ?
+                ListarActionFiltroMapper.INSTANCE.actionListarRequestToListarActionFiltro( request ) :
+                new ListarActionFiltro();
         Page<Action> paginaActions = actionApplicationService.listar( dadosPaginacao, listarActionFiltro );
-        List<ActionResponse> actionsResponses = paginaActions.getContent().stream().map( ActionMapper.INSTANCE::actionToActionResponse ).toList();
+        List<ActionResponse> actionsResponses = paginaActions.getContent().stream()
+                .map( ActionMapper.INSTANCE::actionToActionResponse ).toList();
         return new PageImpl<>( actionsResponses, dadosPaginacao, paginaActions.getTotalElements() );
     }
 
     @PostMapping
     @Operation( summary = "Cadastra uma action", description = "", tags = { "actions" } )
-    public ResponseEntity<ActionResponse> cadastrar(@RequestBody @Valid ActionCadastrarRequest request, UriComponentsBuilder uriBuilder ) {
+    public ResponseEntity<ActionResponse> cadastrar(@RequestBody @Valid ActionCadastrarRequest request,
+                                                    UriComponentsBuilder uriBuilder ) {
         Action action = ActionMapper.INSTANCE.actionCadastrarRequestToAction( request );
         Action actionCadastrada = actionApplicationService.cadastrar( action );
-        URI uri = uriBuilder.path( "/Actions/{id}" ).buildAndExpand( actionCadastrada.getId() ).toUri();
+        URI uri = uriBuilder.path( "/actions/{id}" ).buildAndExpand( actionCadastrada.getId() ).toUri();
         return ResponseEntity.created( uri ).body( ActionMapper.INSTANCE.actionToActionResponse( actionCadastrada ) );
     }
 
